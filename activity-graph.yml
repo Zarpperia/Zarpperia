@@ -1,0 +1,46 @@
+name: Atualizar gráfico de contribuições
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "17 6 * * *"
+  push:
+    branches:
+      - main
+    paths:
+      - "scripts/generate_activity_graph.py"
+      - ".github/workflows/activity-graph.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  update-activity-graph:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Baixar repositório
+        uses: actions/checkout@v4
+
+      - name: Preparar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Gerar SVG a partir da API GraphQL do GitHub
+        run: python scripts/generate_activity_graph.py
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_USERNAME: Zarpperia
+
+      - name: Salvar gráfico atualizado no repositório
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/contribution-activity.svg
+          if git diff --cached --quiet; then
+            echo "O gráfico não mudou; nenhum commit necessário."
+            exit 0
+          fi
+          git commit -m "chore: atualizar gráfico de contribuições"
+          git push
