@@ -112,7 +112,7 @@ Mais um espaço de experimentação e aprendizado com código.
 
 <br/><br/>
 
-<img width="100%" src="./assets/contribution-activity.svg" alt="Gráfico responsivo de atividade de contribuições do GitHub"/>
+<img width="100%" src="./contribution-activity.svg" alt="Gráfico responsivo de atividade de contribuições do GitHub"/>
 
 <sub>Gráfico gerado no próprio repositório e atualizado diariamente pelo GitHub Actions.</sub>
 
