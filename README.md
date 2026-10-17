@@ -129,7 +129,7 @@ Mais um espaço de experimentação e aprendizado com código.
 
 <br/><br/>
 
-![Visualizações do perfil](https://komarev.com/ghpvc/?username=Zarpperia&style=for-the-badge&color=102A56&label=PROFILE+VIEWS)
+![Visualizações do perfil](https://visitor-badge.laobi.icu/badge?page_id=Zarpperia.Zarpperia&left_text=PROFILE%20VIEWS&left_color=102A56&right_color=00D9FF)
 
 <sub>Construído com curiosidade, consistência e vontade de evoluir. · <b>Zarpperia © Iuri Santos</b></sub>
 
